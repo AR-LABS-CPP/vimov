@@ -4,6 +4,7 @@ import MovieDetails from "../views/MovieDetailsView.vue";
 import MovieVideos from "../views/MovieVideosView.vue";
 import MovieImages from "../views/MovieImagesView.vue";
 import MovieCast from "../views/MovieCastView.vue";
+import SearchMovie from "../views/SearchMovieView.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     name: "MovieCastView",
     path: "/movie/:id/cast",
     component: MovieCast,
+  },
+  {
+    name: "SearchMovieView",
+    path: "/search/:id",
+    component: SearchMovie,
   },
 ];
 

@@ -27,3 +27,7 @@ and can also search for different movies.
 ### Movie Cast Page
 
 ![movie_cast_page](https://user-images.githubusercontent.com/70814565/179542440-9d70a437-b1c8-4400-a9f8-b15209335a70.PNG)
+
+### Movie Search Page
+
+![search_results](https://user-images.githubusercontent.com/70814565/179555448-5e0c3d42-1c72-4b4f-b9ca-429bfa653acd.PNG)

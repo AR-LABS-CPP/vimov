@@ -26,19 +26,6 @@ export default {
 </script>
 
 <template>
-  <!-- <header>
-    <nav class="flex justify-between bg-black p-[20px]">
-      <p class="text-3xl text-white font-bold">
-        <span class="text-3xl font-bold text-green-600">Vi</span>mov
-      </p>
-      <input
-        type="text"
-        placeholder="Search Movie"
-        class="mr-6 rounded-lg overflow-hidden text-center px-16 outline-0"
-      />
-    </nav>
-  </header> -->
-
   <section class="m-5 grid place-items-center grid-cols-3 gap-5 lg:grid-cols-5">
     <div v-for="movie in movies" :key="movie.id" class="h-full">
       <router-link :to="'/movie/' + movie.id">
@@ -50,8 +37,4 @@ export default {
       </router-link>
     </div>
   </section>
-
-  <!-- <footer class="p-[20px] text-center text-white font-bold text-lg bg-black">
-    <p>Made By Aliraza</p>
-  </footer> -->
 </template>
