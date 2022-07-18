@@ -22,7 +22,7 @@ onMounted(() => {
     class="text-white p-5 grid place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
   >
     <template v-for="actor in cast">
-      <div class="grid place-items-center p-3 m-3 bg-green-600">
+      <div class="rounded-md grid place-items-center p-3 m-3 bg-green-600">
         <template v-if="actor.profile_path != null">
           <img
             :src="'http://image.tmdb.org/t/p/w185' + actor.profile_path"

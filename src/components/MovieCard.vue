@@ -8,7 +8,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="flex flex-col h-full w-auto text-center object-cover bg-green-700 p-[10px] transition-transform ease duration-500 hover:scale-90 cursor-pointer"
+    class="rounded-md flex flex-col h-full w-auto text-center object-cover bg-green-700 p-[10px] transition-transform ease duration-500 hover:scale-90 cursor-pointer"
   >
     <img
       :src="'https://image.tmdb.org/t/p/w500' + props.imageUrl"
