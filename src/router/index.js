@@ -24,12 +24,12 @@ const routes = [
   {
     name: "MovieImagesView",
     path: "/movie/:id/images",
-    component: MovieVideos,
+    component: MovieImages,
   },
   {
     name: "MovieCastView",
     path: "/movie/:id/cast",
-    component: MovieVideos,
+    component: MovieCast,
   },
 ];
 

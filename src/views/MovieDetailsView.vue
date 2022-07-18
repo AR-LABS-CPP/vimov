@@ -13,7 +13,6 @@ onMounted(() => {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       movieDetails.value = data;
     });
 });
@@ -37,22 +36,22 @@ const imageLoaded = () => {
       <p class="text-xl">{{ movieDetails.overview }}</p>
 
       <div class="my-6 grid grid-cols-3 gap-3">
-        <router-link
-          :to="'/movie/' + movieDetails.id + '/videos'"
-          class="bg-green-600 border-2 border-green-900 px-10 py-3 rounded shadow text-xl hover:bg-green-800"
+        <router-link :to="'/movie/' + movieDetails.id + '/videos'" class="btn"
           >Videos</router-link
         >
-        <router-link
-          :to="'/movie/' + movieDetails.id + '/images'"
-          class="bg-green-600 border-2 border-green-900 px-10 py-3 rounded shadow text-xl hover:bg-green-800"
+        <router-link :to="'/movie/' + movieDetails.id + '/images'" class="btn"
           >Images</router-link
         >
-        <router-link
-          :to="'/movie/' + movieDetails.id + '/cast'"
-          class="bg-green-600 border-2 border-green-900 px-10 py-3 rounded shadow text-xl hover:bg-green-800"
+        <router-link :to="'/movie/' + movieDetails.id + '/cast'" class="btn"
           >Cast</router-link
         >
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.btn {
+  @apply bg-green-600 border-2 border-green-900 px-10 py-3 rounded shadow text-xl hover:bg-green-800;
+}
+</style>
