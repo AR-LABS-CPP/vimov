@@ -31,7 +31,7 @@ onMounted(() => {
       <p class="text-xl">{{ movieDetails.overview }}</p>
 
       <div class="my-3">
-        -- Put Videos Here --
+        Videos Come Here
         <br />
         -- Put Images Here --
         <br />
