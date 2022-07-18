@@ -5,10 +5,11 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 
 const movieDetails = ref({});
+const imageIsLoaded = ref(false);
 
 onMounted(() => {
   fetch(
-    `https://api.themoviedb.org/3/movie/${route.params.id}?append_to_response=credits,videos,images&api_key=b7eb5d6ae450dbb282fdd02fb5157611`
+    `https://api.themoviedb.org/3/movie/${route.params.id}?api_key=b7eb5d6ae450dbb282fdd02fb5157611&include_adult=false`
   )
     .then((res) => res.json())
     .then((data) => {
@@ -16,6 +17,10 @@ onMounted(() => {
       movieDetails.value = data;
     });
 });
+
+const imageLoaded = () => {
+  imageIsLoaded.value = true;
+};
 </script>
 
 <template>
@@ -25,16 +30,28 @@ onMounted(() => {
     <img
       :src="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path"
       class="object-cover rounded-xl"
+      @load="imageLoaded"
     />
-    <div class="p-5">
+    <div class="p-5 flex flex-col justify-center items-center">
       <p class="my-5 text-4xl font-bold">{{ movieDetails.title }}</p>
       <p class="text-xl">{{ movieDetails.overview }}</p>
 
-      <div class="my-3">
-        <br />
-        -- Put Images Here --
-        <br />
-        -- Put Cast Here --
+      <div class="my-6 grid grid-cols-3 gap-3">
+        <router-link
+          :to="'/movie/' + movieDetails.id + '/videos'"
+          class="bg-green-600 border-2 border-green-900 px-10 py-3 rounded shadow text-xl hover:bg-green-800"
+          >Videos</router-link
+        >
+        <router-link
+          :to="'/movie/' + movieDetails.id + '/images'"
+          class="bg-green-600 border-2 border-green-900 px-10 py-3 rounded shadow text-xl hover:bg-green-800"
+          >Images</router-link
+        >
+        <router-link
+          :to="'/movie/' + movieDetails.id + '/cast'"
+          class="bg-green-600 border-2 border-green-900 px-10 py-3 rounded shadow text-xl hover:bg-green-800"
+          >Cast</router-link
+        >
       </div>
     </div>
   </div>
