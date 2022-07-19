@@ -12,8 +12,10 @@ const router = useRouter();
 
 const searchText = ref("");
 
+const emit = defineEmits(["searchText:changed"]);
+
 const handleSearchMovie = () => {
-  router.replace({ path: `/search/${searchText.value}` });
+  router.push({ path: `/search/${searchText.value}` });
   searchText.value = "";
 };
 </script>
@@ -29,7 +31,6 @@ const handleSearchMovie = () => {
       <form @submit.prevent="handleSearchMovie" class="mr-6">
         <input
           v-model="searchText"
-          @input="(event) => (searchText = event.target.value)"
           type="text"
           placeholder="Search Movie"
           class="overflow-hidden rounded-lg px-16 py-2 text-center outline-0"

@@ -7,6 +7,8 @@ const route = useRoute();
 
 const movies = ref({});
 
+const searchPromptText = ref("");
+
 onMounted(() => {
   fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=b7eb5d6ae450dbb282fdd02fb5157611&query=${route.params.id}&page=1&include_adult=false`
@@ -15,12 +17,14 @@ onMounted(() => {
     .then((data) => {
       movies.value = data.results;
     });
+
+  searchPromptText.value = `Search Results For "${route.params.id}"`;
 });
 </script>
 
 <template>
   <div class="text-3xl w-full p-5">
-    <p class="text-white">Search Results for "{{ route.params.id }}"</p>
+    <p class="text-white">{{ searchPromptText }}</p>
   </div>
   <section
     v-if="movies.length > 0"
